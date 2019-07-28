@@ -1,0 +1,43 @@
+<p>LISTADO DE ARTÍCULOS</p>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Author</th>
+        <th>Title</th>
+        <th>Journal</th>
+        <th>Year</th>
+    </tr>
+    <tr *ngFor="let g of articlesList">
+        <td>
+            {{g.id}}
+        </td>
+        <td (click)="setArticleItemSelected(g)" style="cursor: pointer">
+            {{g.author}}
+        </td>
+        <td>
+            {{g.title}}
+        </td>
+        <td>
+            {{g.journal}}
+        </td>
+        <td>
+            {{g.year}}
+        </td>
+        <td (click)="deleteArticle(g)" style="cursor: pointer">Eliminar </td>
+    </tr>
+
+
+</table>
+
+<div *ngIf="articleItemSelected">
+        <p>DETALLE DEL ARTÍCULO</p>
+    Author: <span>{{articleItemSelected.author}}</span><br />
+    Title: <span>{{articleItemSelected.title}}</span><br />
+    Journal: <span>{{articleItemSelected.journal}}</span><br />
+    Year: <span>{{articleItemSelected.year}}</span><br />
+    ArticleNumber: <span>{{articleItemSelected.articleNumber}}</span><br />
+    Volume: <span>{{articleItemSelected.volume}}</span><br />
+    Abstract: <span>{{articleItemSelected.abstract}}</span><br />
+</div>
+

@@ -1,0 +1,17 @@
+<mat-toolbar color="primary" *ngIf="isLoggedIn$ | async as isLoggedIn">
+  <mat-toolbar-row>
+    <span>
+      <img src="assets/img/angular-logo.svg" class="angular-logo">
+      Full-Stack programmer with MEAN
+    </span>
+    <span class="fill-remaining-space"></span>
+    <!--button mat-button routerLink="login">Login</button-->
+    <button mat-button routerLink="users/listing">Users</button>
+    <mat-icon class="example-icon" aria-hidden="false" aria-label="home" routerLink="main/welcome">home</mat-icon>
+    <button mat-button (click)="onLogout()" *ngIf="isLoggedIn">Logout</button>
+
+  </mat-toolbar-row>
+
+</mat-toolbar>
+
+

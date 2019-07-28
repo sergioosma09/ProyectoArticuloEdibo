@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Style-Type" content="text/css" /> 
+    <title>creacion.component.html</title>
+    <link href="/library/skin/tool_base.css" type="text/css" rel="stylesheet" media="all" />
+    <link href="/library/skin/morpheus-default/tool.css" type="text/css" rel="stylesheet" media="all" />
+    <script type="text/javascript" src="/library/js/headscripts.js"></script>
+    <style>body { padding: 5px !important; }</style>
+  </head>
+  <body>
+
+      <p>CREACIÓN DE UN ARTICULO</p>
+
+<form [formGroup]="articleForm" class="login-container" (ngSubmit)="createArticle()">
+
+    <p *ngIf="isSubmitted && formControls.author.errors" class="help-block">
+      <span *ngIf="formControls.author.errors.required">Author is required</span>
+  </p>
+
+  <div [ngClass]="{ 'has-error': isSubmitted && formControls.author.errors }">
+    <input type="text" placeholder="Author" formControlName="author">
+  </div>  
+  <p *ngIf="isSubmitted && formControls.title.errors" class="help-block">
+    <span *ngIf="formControls.title.errors.required">Title is required</span>
+</p>
+
+<div [ngClass]="{ 'has-error': isSubmitted && formControls.title.errors }">
+  <input type="text" placeholder="Title" formControlName="title">
+</div>
+  <p *ngIf="isSubmitted && formControls.journal.errors" class="help-block">
+        <span *ngIf="formControls.journal.errors.required">Journal is required</span>
+    </p>
+
+    <div [ngClass]="{ 'has-error': isSubmitted && formControls.journal.errors }">
+      <input type="text" placeholder="Journal" formControlName="journal">
+    </div>
+
+    <p *ngIf="isSubmitted && formControls.year.errors" class="help-block">
+      <span *ngIf="formControls.year.errors.required">Year is required</span>
+    </p>
+
+    <div [ngClass]="{ 'has-error': isSubmitted && formControls.year.errors }">
+      <input type="text" placeholder="Year" formControlName="year">
+    </div>
+
+    <p *ngIf="isSubmitted && formControls.articleNumber.errors" class="help-block">
+        <span *ngIf="formControls.articleNumber.errors.required">ArticleNumber is required</span>
+      </p>
+  
+      <div [ngClass]="{ 'has-error': isSubmitted && formControls.number.errors }">
+        <input type="text" placeholder="ArticleNumber" formControlName="articleNumber">
+      </div>
+    <p *ngIf="isSubmitted && formControls.number.errors" class="help-block">
+        <span *ngIf="formControls.number.errors.required">Number is required</span>
+      </p>
+  
+      <div [ngClass]="{ 'has-error': isSubmitted && formControls.number.errors }">
+        <input type="text" placeholder="Number" formControlName="number">
+      </div>
+
+    <p *ngIf="isSubmitted && formControls.volume.errors" class="help-block">
+        <span *ngIf="formControls.volume.errors.required">Volume is required</span>
+      </p>
+  
+      <div [ngClass]="{ 'has-error': isSubmitted && formControls.volume.errors }">
+        <input type="text" placeholder="Volume" formControlName="volume">
+      </div>
+
+    <p *ngIf="isSubmitted && formControls.abstract.errors" class="help-block">
+        <span *ngIf="formControls.abstract.errors.required">Abstract is required</span>
+      </p>
+  
+      <div [ngClass]="{ 'has-error': isSubmitted && formControls.abstract.errors }">
+        <input type="text" placeholder="Abstract" formControlName="abstract">
+      </div>
+      <p>
+      <input type="submit" value="Crea Article">
+    </p>
+  </form>
+
+  </body>
+</html>
